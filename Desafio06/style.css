@@ -1,0 +1,155 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bc-header: hsl(218, 17%, 62%);
+    --bc-main: hsl(233, 100%, 97%);
+    --bc-detail: hsl(275, 18%, 79%);
+    --bc-button: hsl(312, 91%, 96%);
+
+    --fc-h1: hsl(0, 0%, 100%);
+    --fc-p: hsl(274, 84%, 12%);
+    --fc-span: hsl(232, 17%, 35%);
+
+    --ff-main: 'Staatliches', cursive;
+    --ff-p: 'Palanquin', sans-serif;
+
+    font-size: 62.5%;
+    --fs-body: 1.7rem;
+}
+
+body {
+    font-size: var(--fs-body);
+    font-family: var(--ff-main);
+
+    background-color: var(--bc-main);
+
+}
+
+body::before {
+    content: '';
+    width: 100%;
+    height: 28.0rem;
+   
+    z-index: -1;
+    position: absolute;
+    background-color: var(--bc-header);
+}
+
+header::before {
+    content: '';
+    width: 100%;
+    height: 5.0rem;
+    top: -2px;
+    left: 0;
+    margin-top: 20.1rem;
+   
+    z-index: -1;
+    position:absolute;
+    background-color: var(--bc-detail);
+}
+
+.page {
+    margin: 0 auto 6rem;
+    width: 30.5rem;
+
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    margin: 0 auto;
+}
+
+header img {
+    width: 13.7rem;
+    height: 13.7rem;
+    margin: 3.2rem auto 3.2rem;
+}
+
+header h1 {
+    color: var(--fc-h1);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+
+    margin-bottom: 5.0rem;
+}
+
+.apresentation {
+    font-family: var(--ff-p);
+    font-style: normal;
+    color: var(--fc-p);
+    font-weight: 400;
+
+    line-height: 15px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 6rem auto 5rem;
+}
+
+.card {
+    position: relative;
+}
+.card img {
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 3.2rem;
+    animation-name: downtop;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+
+}
+.card p {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    animation: topdown 1s;
+    animation-fill-mode: forwards;
+
+}
+
+.card span {
+    border-radius: 2rem;
+    background-color: var(--bc-button);
+    font-size: var(--fs-body);
+    font-weight: 400;
+    color: var(--fc-span);
+    padding:0 2.4rem;
+  
+    width: fit-content;
+    height: 3.5rem;
+  
+    display: inline-flex;
+    align-items: center;
+  
+  }
+
+  @keyframes downtop {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(-15px);
+    }
+  }
+
+  @keyframes topdown {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
